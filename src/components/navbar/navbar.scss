@@ -1,0 +1,191 @@
+.navbar-inverse {
+    background-color: #36465d;
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-inverse input {
+    transition: background .15s, color .15s;
+    color: hsla(0,0%,100%,.6);
+    background: rgba(0,0,0,.13);
+    font-size: 15px;
+    border: 0;
+    border-radius: 3px;
+}
+
+.navbar-inverse .image-navbar {
+    height: 20px;
+    width: 20px;
+    opacity: .3;
+}
+
+.navbar-inverse .form-group.search-bar {
+    margin-left: 16%;
+}
+
+.navbar-inverse .form-group.search-bar input {
+    width: 315px;
+}
+
+.navbar-inverse .image-navbar span {
+    margin: 5px 0;
+}
+
+.navbar-inverse .active .image-navbar {
+    opacity: 1;
+}
+
+.navbar-inverse .image-navbar:hover {
+    opacity: .8;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav a.btn-navbar, 
+.navbar-inverse .navbar-nav a.btn-navbar:hover, 
+.navbar-inverse .navbar-nav a.btn-navbar:focus {
+    background-color: #5292cc;
+    padding: 7.5px;
+    margin: 7.5px;
+    border-radius: 3px;
+}
+
+.navbar-inverse .btn-navbar-image {
+    height: 20px;
+    width: 20px;
+}
+
+.navbar-inverse input:focus {
+    transition: background 150ms, color 150ms;
+    background: #fff;
+    color: #444;
+    font-weight: 400;
+}
+
+.navbar-inverse .container {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.navbar-inverse .form-group {
+    margin: 2px;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo img {
+    padding: 8px;
+    position: absolute;
+}
+
+.logo div {
+    position: absolute;
+    top: 9px;
+    left: 7px;
+}
+
+.white-logo {
+    width: 21px;
+    height: 36px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAhCAYAAAA74pBqAAAABGdBTUEAALGPC/xhBQAAAZZJREFUSA3dlr1KA0EUhXc14k9lIxHTpHAFG1GwCxYW4guEgK2PYK0PkEa08AEsrERJZWcpCGJlpyAWGjCFqfwBlfUbWZa5M7PrTrQIDpzMveeee3Z+wiZB4BhxHE+CZ6CPD5J1hzylBtJIBjOkY5IKBsnnDE6kWWbTQlUwyTJbLtgvZJYZ5zKOoi5UBRPLjL4tMFKwX8iEGatqUN0QCo/k2wyTYbBJ375HryUNMVmB3QORVbWJS6hTmw46cNvK7IVg1CHwpWbVNv/CSD24JC7Adymmvr/NuuZye8hjerrqNisE1cSgyVxLYtd0CLnrKHTCMLwp8fFAUSHA+Mkh1Kk2+jOd0OP+vgB9pb+K/882w7xzMLf5mSem5vXrdPuDWY3vYjVLY67sKkuY8EPMRxgugAjUQVPlVh/kPOhltJSZdaA4XcNH1pPyiVfKE+Y2VctOfp+zqt7Wq66Vqf8UF8A+B6dPSh6kkR6w1Qq48zy8R91DxBiVwXFBwza6hrVN4UiCaJFpDSyBKVAGb+AenIMT0OI99/4F8BYUhlPAAqcAAAAASUVORK5CYII=") 1px -1px no-repeat;
+}
+
+.animated-logo:hover {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.animated-logo {
+    opacity: 0;
+    width: 21px;
+    height: 36px;
+    background: url('https://assets.tumblr.com/images/logo/hover-animations/4@2x.png') left center;
+    background-size: 1008px 40px;
+    animation: play 1.4s steps(48) infinite
+}
+@keyframes play {
+   100% { background-position: -1008px; }
+}
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .icon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .icon  { 
+    left: 0;
+    top: 0;
+}
+
+/* add padding  */
+.left-addon input  { 
+    padding-left: 30px; 
+}
+
+.icon {
+    height: 34px;
+    width: 34px;
+    fill: #ccc;
+    stroke: #ccc;
+}
+
+.input-search-bar:focus + .icon {
+    fill: #444444;
+    stroke: #444444;
+}
+
+.navbar-inverse .navbar-right span{
+    margin-left: 10px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .navbar-inverse .form-group.search-bar {
+        margin-left: 0;
+    }
+    .navbar-inverse .form-group.search-bar input {
+        width: 100%;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .navbar-nav > li > a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.navbar-inverse .navbar-nav > .open > a, 
+.navbar-inverse .navbar-nav > .open > a:hover, 
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: rgba(255,255,255,.1);
+}
+
+.navbar-inverse .navbar-profile-photo {
+    width: 35px;
+    margin-right: 9px;
+    border-radius: 3px;
+}
+
+.navbar-inverse li.profile-photo a {
+    padding: 4px 9px 4px 9px;
+}
+
+.navbar-inverse .dropdown-menu .divider {
+    margin: 5px 0;
+}

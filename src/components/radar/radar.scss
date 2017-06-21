@@ -1,0 +1,46 @@
+.recommended {
+    border-radius: 1;   
+}
+
+.recommended .panel-footer {
+    padding: 18px;
+}
+
+.radar {
+    border: 0;
+}
+
+.recommended .panel-footer a {
+    padding: 0px 13px 4px;
+}
+
+.panel-heading {
+    padding: 24px 24px 4px;
+}
+
+.radar .panel-heading span {
+    color: #565656;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 5px;
+}
+
+.radar .panel-footer {
+    background-color: #fff;
+    border-color: #ebebeb;
+}
+
+.radar .panel-footer a {
+    font-size: 12px;
+    color: #529ecc;
+    font-weight: bold;
+}
+
+.radar .panel-body {
+    padding: 0;
+}
+
+.radar hr {
+    margin: 0;
+    border-color: #ebebeb;
+}

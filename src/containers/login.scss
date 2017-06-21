@@ -1,0 +1,88 @@
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px;
+    position: relative;
+}
+
+.login-back {
+    background-color: #243349;
+    background-image: url("../assets/images/login-background.png");
+    background-size: cover;
+    background-position: center;    
+    position: relative;
+}
+
+.login-transparency {
+    background: rgba(54, 70, 93, .8);    
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.login-gradient {
+    background: linear-gradient(45deg, rgba(39, 52, 70, .4), transparent, rgba(255, 255, 255, .2));
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.login.row {
+    margin: 0;
+}
+
+.clase2 {
+    position: absolute;
+}
+
+.login .login-form {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login .login-footer {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.login .logo {
+    height: 58px;
+    width: 280px;
+    margin-bottom: 100px;
+}
+
+.login .btn-lg {
+    padding: 18px;
+}
+
+.login .btn-login {
+    color: #fff;
+    background-color: #ec8524;
+    margin-top: 30px;
+    margin-bottom: 29px;
+}
+
+.login .btn-signup {
+    color: #fff;
+    background-color: transparent;
+    margin-top: 30px;
+}
+
+.login .input-lg {
+    height: 60px;
+    padding: 30px;
+}
+
+.login .form-control.inputError {
+    color: red;
+}
+
+.login .login-round-up {
+    border-radius: 3px 3px 0 0;
+}
+
+.login .login-round-down {
+    border-radius: 0 0 3px 3px;
+}

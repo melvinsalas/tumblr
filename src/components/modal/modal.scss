@@ -1,0 +1,76 @@
+.modal2 {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    position: fixed;
+    z-index: 1000;
+}
+
+.modal2 .background {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    position: fixed;
+    background-color: #344359;
+    opacity: .8;
+}
+
+.modal2 .settings {
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+
+.modal2 .account {
+    color: #2c2b2c;
+}
+
+.modal2 .panel {
+    border: 0;
+}
+
+.modal2 .panel .panel-heading,
+.modal2 .panel .panel-footer {
+    padding: 31px;
+    border: 0;
+}
+
+.modal2.row {
+    display: flex;
+    margin: 0;
+}
+
+.modal2 .panel {
+    padding: 0;
+}
+
+.modal2.row .panel {
+    margin: 90px auto auto;
+}
+
+.modal2 .btn-close {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.modal2 .twitter {
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin: 0 21px;
+}
+
+.modal2 .btn-post {
+    background-color: #529ecc;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    float: right;
+    margin: -7.5px 0;
+    width: 96px;
+    padding: 9px;
+}

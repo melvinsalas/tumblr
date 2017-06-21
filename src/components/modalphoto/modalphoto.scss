@@ -1,0 +1,27 @@
+.modalphoto .addphoto {
+    height: 200px;
+    background-color: #f3f3f3;
+    color: #b2b2b2;
+}
+
+.modalphoto .addphoto.left {
+    border-right: solid 1px #d5d5d5;
+}
+
+.modalphoto.row {
+    margin: 0;
+}
+
+.modalphoto .modalphoto-logo {
+    text-align: center;
+}
+
+.modalphoto .modalphoto-logo img {
+    margin-top: 66px;
+    height: 50px;
+    opacity: .25;
+}
+
+.modalphoto .modalphoto-logo .modalphoto-subtitle {
+    margin-top: 13px;
+}

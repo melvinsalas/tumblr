@@ -1,0 +1,27 @@
+.smallpost > img {
+    width: calc(100% - 60px);
+    margin: 0 30px 13px 30px;
+}
+
+.smallpost .actions {
+    float: right;
+}
+
+.smallpost .actions img {
+    height: 15px;
+    width: 15px;
+}
+
+.smallpost .footer {
+    padding: 0 30px 23px;
+}
+
+.smallpost .btn-footer {
+    margin-left: 20px;
+}
+
+.smallpost .count {
+    font-size: 14px;
+    font-weight: bold;
+    color: #8f8f8f;
+}

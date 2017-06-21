@@ -1,0 +1,114 @@
+.post {
+    display: flex;
+}
+.post .img-newpost {
+    padding: 4px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.post>img {
+    height: 64px;
+    width: 64px;
+    margin-right: 34px;
+    border-radius: 3px;
+}
+
+.post .post-panel {
+    height: 100px;
+    display: flex;
+    width: 100%;
+    padding: 20.5px;
+}
+
+.post .post-option {
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.post .label-imagepost {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #565656;
+}
+
+.post .panel {
+    width: 100%;    
+    border: 0;
+}
+
+.post .panel-footer {
+    border: 0;
+    padding-bottom: 23px;
+}
+
+.post .panel-heading {
+    padding: 25px 15px 11px;
+}
+
+.post .btn-footer,
+.post .btn-heading {    
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 0 0 0 30px;
+    opacity: .75;
+}
+
+.post .btn-small {
+    width: 14px;
+    height: 14px;
+    margin: 3px 0 3px 30px;
+}
+
+.post .btn-heading:hover,
+.post .btn-heading:focus, 
+.post .btn-footer:hover,
+.post .btn-footer:focus { 
+    opacity: 1;
+}
+
+.post .row {
+    margin: 0;
+}
+
+.post .panel-body,
+.post .panel-body img {
+    width: 100%;
+}
+
+.post .count {
+    font-size: 14px;
+    font-weight: bold;
+    color: #8f8f8f;
+    padding: 0 2px;
+}
+
+.post .tags {
+    font-size: 14px;
+    color: #8f8f8f;
+    padding: 30px 17px 0;
+}
+
+.post .panel-body {
+    padding: 14px 0;
+}
+
+.post .blog-name {
+    font-size: 16px;
+    color: #8f8f8f;
+    float: left;
+}
+
+.post .account-name {
+    font-weight: bold;
+    float: left;
+    margin-left: 5px;
+}
+
+.post .btn-follow {
+    font-size: 16px;
+    color: #529ecc;
+    float: left;
+    margin-left: 15px;
+}
