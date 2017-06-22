@@ -7,6 +7,7 @@ import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 import ModalText from '../modaltext/ModalText'
 import ModalPhoto from '../modalphoto/ModalPhoto'
 import ModalQuote from '../modalquote/ModalQuote'
+import ModalVideo from '../modalvideo/ModalVideo'
 import { API_SERVER } from '../../constants.js';
 
 require('./modal.scss');
@@ -37,6 +38,10 @@ class Modal extends React.Component {
         const self = this;
         instance.post('/posts', self.state)
             .then(function (response) {
+                self.props.addPost(response.data);
+                self.setState({
+                    tagsStr: ""
+                });
                 self.props.handlerOpen();
             })
             .catch(function (error) {
@@ -60,13 +65,14 @@ class Modal extends React.Component {
         this.setState({tagsStr: e.target.value});
     }
 
-    urlChange(e) {
-        this.state.media.url = e.target.value;
+    urlChange(url) {
+        this.state.media.url = url;
     }
 
     render() {
         let handlerOpen = this.props.handlerOpen;
         let modalType = this.props.modalType;
+        let addPost = this.props.addPost;
         this.state.media.type = modalType;
         let media = this.state;
         let titleChange = this.titleChange.bind(this);
@@ -84,8 +90,9 @@ class Modal extends React.Component {
                         </div>
                         <div className="panel-body">
                             {modalType == 'text' && <ModalText media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
-                            {modalType == 'photo' && <ModalPhoto media={media} />}
-                            {modalType == 'quote' && <ModalQuote media={media} />}
+                            {modalType == 'photo' && <ModalPhoto media={media} urlChange={urlChange} tagsChange={tagsChange}/>}
+                            {modalType == 'quote' && <ModalQuote media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
+                            {modalType == 'video' && <ModalVideo media={media} urlChange={urlChange} tagsChange={tagsChange}/>}
                         </div>
                         <div className="panel-footer">
                             <span className="btn-close" onClick={() => handlerOpen()}>CLOSE</span>

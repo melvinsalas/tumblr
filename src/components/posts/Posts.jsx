@@ -6,6 +6,8 @@ import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import PostText from '../posttext/PostText'
 import PostPhoto from '../postphoto/PostPhoto'
+import PostQuote from '../postquote/PostQuote'
+import PostVideo from '../postvideo/PostVideo'
 import { API_SERVER } from '../../constants.js';
 
 
@@ -62,6 +64,8 @@ class Posts extends React.Component {
           <div className="panel-body">
             { post.media.type == "text" && <PostText post={post} />}
             { post.media.type == "photo" && <PostPhoto post={post} />}
+            { post.media.type == "quote" && <PostQuote post={post} />}
+            { post.media.type == "video" && <PostVideo post={post} />}
             <div className="row">
               <div className="col-xs-12">
                 <div className="tags">

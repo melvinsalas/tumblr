@@ -13,11 +13,12 @@ class ModalQuote extends React.Component {
     }
 
     render() {
+        let {media, titleChange, contentChange, tagsChange} = this.props;
         return (
             <div className="modalquote">
-                <input className="title form-control" type="text" placeholder={`"Quote"`} />
-                <input className="content form-control" type="text" placeholder="Source" />
-                <input className="tags form-control" type="text" placeholder="#tags" />
+                <input value={media.title} onChange={titleChange} className="title form-control" type="text" placeholder={`"Quote"`}/>
+                <textarea value={media.content} onChange={contentChange} className="content form-control" type="text" placeholder="Source" />
+                <input value={media.tagsStr} onChange={tagsChange} className="tags form-control" type="text" placeholder="#tags" />
             </div>
         );
     };

@@ -33,9 +33,10 @@ class NewPost extends React.Component {
 
     render() {
         let handlerOpen = this.handlerOpen;
+        let addPost = this.props.addPost;
         return (
             <div className="newpost">
-                <Modal isOpen={this.state.isOpen} modalType={this.state.modalType} handlerOpen={handlerOpen.bind(this)} />
+                <Modal addPost={addPost} isOpen={this.state.isOpen} modalType={this.state.modalType} handlerOpen={handlerOpen.bind(this)} />
                 <img src={localStorage.getItem("photo")} alt="avatar" />
                 <div className="panel post-panel">
                     <div className="post-option" onClick={() => this.openModal('text')} >
@@ -62,7 +63,7 @@ class NewPost extends React.Component {
                         <img className="img-newpost img-responsive" src="src/assets/images/new-post/audio.svg" alt="" />
                         <p className="label-imagepost">Audio</p>
                     </div>
-                    <div className="post-option" onClick={() => this.openModal('text')} >
+                    <div className="post-option" onClick={() => this.openModal('video')} >
                         <img className="img-newpost img-responsive" src="src/assets/images/new-post/video.svg" alt="" />
                         <p className="label-imagepost">Video</p>
                     </div>

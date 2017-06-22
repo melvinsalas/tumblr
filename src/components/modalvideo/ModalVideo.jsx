@@ -6,13 +6,13 @@ import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import { API_SERVER } from '../../constants.js';
 
-require('./modalphoto.scss');
+require('./modalvideo.scss');
 
-class ModalPhoto extends React.Component {
+class ModalVideo extends React.Component {
     constructor() {
         super();
         this.state = {
-            photoUrl: '',
+            videoUrl: '',
             loading: false,
             loaded: false
         }
@@ -39,7 +39,7 @@ class ModalPhoto extends React.Component {
                 })
                     .then(function (response) {
                         self.setState({
-                            photoUrl: ("https://s3.us-east-2.amazonaws.com/melvinsalas.tumblr/" + response.data)
+                            videoUrl: ("https://s3.us-east-2.amazonaws.com/melvinsalas.tumblr/" + response.data)
                         });
                         self.setState({ loading: false, loaded: true });
                         self.props.urlChange("https://s3.us-east-2.amazonaws.com/melvinsalas.tumblr/" + response.data);
@@ -61,27 +61,29 @@ class ModalPhoto extends React.Component {
         this.loadfile = this.loadfile.bind(this);
         let {media, urlChange, tagsChange} = this.props;
         return (
-            <div className="modalphoto row">
+            <div className="modalvideo row">
                 {
                     this.state.loaded &&
-                    <div className="addphoto final-photo col-xs-12">
-                        <img className="loaded-photo" src={this.state.photoUrl} alt="Upload Photo" />
+                    <div className="addvideo final-video col-xs-12">
+                        <video className="loaded-video" controls="controls" autoplay="autoplay" name="media">
+                            <source src={this.state.videoUrl} type="video/mp4" />
+                        </video>
                     </div>
                 }
                 {
                     !this.state.loaded &&
                     <div>
-                        <div className="addphoto left col-xs-6">
+                        <div className="addvideo left col-xs-6">
                             <input onChange={this.loadfile} className="input-file" type="file" />
-                            <div className="modalphoto-logo">
-                                <img src="src/assets/images/modal/upload-photo.svg" alt="Upload Photo" />
-                                <div className="modalphoto-subtitle">{(this.state.loading && <span>Loading photo...</span>) || <span>Upload photo</span>}</div>
+                            <div className="modalvideo-logo">
+                                <img src="src/assets/images/modal/upload-photo.svg" alt="Upload Video" />
+                                <div className="modalvideo-subtitle">{(this.state.loading && <span>Loading video...</span>) || <span>Upload video</span>}</div>
                             </div>
                         </div>
-                        <div className="addphoto col-xs-6">
-                            <div className="modalphoto-logo">
-                                <img src="src/assets/images/modal/upload-photos-for-web.svg" alt="Upload Photo for Web" />
-                                <div className="modalphoto-subtitle">Add photo for web</div>
+                        <div className="addvideo col-xs-6">
+                            <div className="modalvideo-logo">
+                                <img src="src/assets/images/modal/upload-photos-for-web.svg" alt="Upload Video for Web" />
+                                <div className="modalvideo-subtitle">Add video for web</div>
                             </div>
                         </div>
                     </div>
@@ -92,4 +94,4 @@ class ModalPhoto extends React.Component {
     };
 }
 
-export default connect()(ModalPhoto);
+export default connect()(ModalVideo);

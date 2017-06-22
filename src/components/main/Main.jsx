@@ -23,15 +23,6 @@ class Main extends React.Component {
     }
   }
 
-  onGreetingUpdate = (e) => {
-    this.setState({ greeting: e.target.value });
-  }
-
-  updateGreeting = () => {
-    this.props.testActions.setGreeting(this.state.greeting);
-    this.setState({ greeting: '' });
-  }
-
   toggleOpen = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
@@ -55,14 +46,22 @@ class Main extends React.Component {
       });
   }
 
+  addPost(post) {
+    let newPosts = this.state.posts;
+    newPosts.unshift(post);
+    this.setState({
+      posts: newPosts
+    });
+  }
+
   render() {
     let { greeting } = this.props;
-
+    let addPost = this.addPost.bind(this);
     return (
       <div className="container container-main">
         <div className="row">
           <div className="col-md-offset-1 col-md-7 no-padding">
-            <NewPost />
+            <NewPost addPost={addPost} />
             {!!this.state.posts && this.state.posts.map(post => {
               return (
                   <Posts key={post.id} post={post} />
