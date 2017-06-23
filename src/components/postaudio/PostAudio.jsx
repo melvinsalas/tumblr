@@ -15,7 +15,7 @@ class PostAudio extends React.Component {
     render() {
         let { post } = this.props;
         return (
-            <video className="postaudio" controls="controls" autoplay="autoplay" name="media">
+            <video className="postaudio" controls="controls" name="media">
                 <source src={post.media.url} type="audio/mpeg"/>
             </video>
         );

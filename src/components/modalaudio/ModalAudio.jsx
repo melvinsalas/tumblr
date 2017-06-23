@@ -65,7 +65,7 @@ class ModalAudio extends React.Component {
                 {
                     this.state.loaded &&
                     <div className="addaudio final-audio col-xs-12">
-                        <video className="loaded-audio" controls="controls" autoplay="autoplay" name="media">
+                        <video className="loaded-audio" controls="controls" name="media">
                             <source src={this.state.audioUrl} type="audio/mpeg" />
                         </video>
                     </div>

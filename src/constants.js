@@ -1,1 +1,1 @@
-export const API_SERVER = 'http://localhost:50262/api/';
+export const API_SERVER = 'http://melvinsalasazure.azurewebsites.net/api/';

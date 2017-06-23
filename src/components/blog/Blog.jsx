@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as testActions from '../../actions/testActions';
 import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+import { API_SERVER } from '../../constants.js';
 
 require('./blog.scss');
 
@@ -12,7 +13,28 @@ class Blog extends React.Component {
         super();
     }
 
+    follow = () => {
+        var id = this.props.blog.id;
+        var axios = require('axios');
+
+        var instance = axios.create({
+            baseURL: API_SERVER,
+            headers: { 'Authorization': 'Basic ' + localStorage.getItem('token') }
+        });
+
+        const self = this;
+        instance.post('/following', { id })
+        .then(function (response) {
+            self.props.blog.isFollowed = true;
+            self.forceUpdate();
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
     render() {
+        this.follow = this.follow.bind(this);
         let {blog} = this.props;
         return (
             !!blog &&
@@ -22,7 +44,9 @@ class Blog extends React.Component {
                     <div className="title">{blog.name}</div>
                     <div className="subtitle">{blog.blogname}</div>
                 </div>
-                <img className="blog-btn" src="src/assets/images/blog/follow.svg" alt="Follow"/>
+                {!blog.isFollowed && 
+                    <img onClick={this.follow} className="blog-btn" src="src/assets/images/blog/follow.svg" alt="Follow"/>
+                }
             </div>
         );
     };

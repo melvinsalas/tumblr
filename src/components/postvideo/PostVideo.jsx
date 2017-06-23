@@ -15,7 +15,7 @@ class PostVideo extends React.Component {
     render() {
         let { post } = this.props;
         return (
-            <video controls="controls" autoplay="autoplay" name="media">
+            <video controls="controls" name="media">
                 <source src={post.media.url} type="video/mp4"/>
             </video>
         );

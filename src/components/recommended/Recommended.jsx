@@ -38,6 +38,10 @@ class Recommended extends React.Component {
       });
   }
 
+  write() {
+    console.log('write');
+  }
+
   render() {
     return (
       <div className="panel recommended">

@@ -65,7 +65,7 @@ class ModalVideo extends React.Component {
                 {
                     this.state.loaded &&
                     <div className="addvideo final-video col-xs-12">
-                        <video className="loaded-video" controls="controls" autoplay="autoplay" name="media">
+                        <video className="loaded-video" controls="controls" name="media">
                             <source src={this.state.videoUrl} type="video/mp4" />
                         </video>
                     </div>

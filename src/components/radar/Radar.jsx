@@ -48,7 +48,7 @@ class Radar extends React.Component {
           <span>RADAR</span>
         </div>
         <div className="panel-body">
-          <Blog blog={this.state.radar.user} />
+          <Blog blog={this.state.radar.user}/>
           <SmallPost post={this.state.radar.post} />
           { this.state.radarEmpty &&
             <div className="radarEmpty">🚫 No radar data 📡</div>

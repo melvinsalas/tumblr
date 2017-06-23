@@ -21,7 +21,8 @@ class Main extends React.Component {
       greeting: '',
       isOpen: false,
       posts: [],
-      loadingData: true
+      loadingData: true,
+      algo: false
     }
   }
 
@@ -77,7 +78,6 @@ class Main extends React.Component {
             {!this.state.posts.length && 
               <LoadingPosts loadingData={this.state.loadingData} />
             }
-
           </div>
           <div className="col-md-offset-1 col-md-3 no-padding">
             <div className="col-xs-6 col-md-12">
