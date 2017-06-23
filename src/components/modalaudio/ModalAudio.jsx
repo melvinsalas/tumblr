@@ -6,16 +6,15 @@ import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import { API_SERVER } from '../../constants.js';
 
-require('./modalphoto.scss');
+require('./modalaudio.scss');
 
-class ModalPhoto extends React.Component {
+class ModalAudio extends React.Component {
     constructor() {
         super();
         this.state = {
-            photoUrl: '',
+            audioUrl: '',
             loading: false,
-            loaded: false,
-            forweb: false
+            loaded: false
         }
     }
 
@@ -40,7 +39,7 @@ class ModalPhoto extends React.Component {
                 })
                     .then(function (response) {
                         self.setState({
-                            photoUrl: ("https://s3.us-east-2.amazonaws.com/melvinsalas.tumblr/" + response.data)
+                            audioUrl: ("https://s3.us-east-2.amazonaws.com/melvinsalas.tumblr/" + response.data)
                         });
                         self.setState({ loading: false, loaded: true });
                         self.props.urlChange("https://s3.us-east-2.amazonaws.com/melvinsalas.tumblr/" + response.data);
@@ -58,55 +57,35 @@ class ModalPhoto extends React.Component {
         }
     }
 
-    forweb = () => {
-        this.setState({
-            forweb: true
-        });
-    }
-
-    keyPress(e){
-        if(e.keyCode == 13){
-            this.setState({
-                photoUrl: e.target.value,
-                loaded: true,
-                forweb: false
-            });
-            this.props.urlChange(e.target.value);
-        }
-    }
-
     render() {
         this.loadfile = this.loadfile.bind(this);
-        this.forweb = this.forweb.bind(this);
-        this.keyPress = this.keyPress.bind(this);
         let {media, urlChange, tagsChange} = this.props;
         return (
-            <div className="modalphoto row">
-                {this.state.loaded &&
-                    <div className="addphoto final-photo col-xs-12">
-                        <img className="loaded-photo" src={this.state.photoUrl} alt="Upload Photo" />
+            <div className="modalaudio row">
+                {
+                    this.state.loaded &&
+                    <div className="addaudio final-audio col-xs-12">
+                        <video className="loaded-audio" controls="controls" autoplay="autoplay" name="media">
+                            <source src={this.state.audioUrl} type="audio/mpeg" />
+                        </video>
                     </div>
                 }
-                {!this.state.loaded && !this.state.forweb &&
+                {
+                    !this.state.loaded &&
                     <div>
-                        <div className="addphoto left col-xs-6">
+                        <div className="addaudio left col-xs-6">
                             <input onChange={this.loadfile} className="input-file" type="file" />
-                            <div className="modalphoto-logo">
-                                <img src="src/assets/images/modal/upload-photo.svg" alt="Upload Photo" />
-                                <div className="modalphoto-subtitle">{(this.state.loading && <span>Loading photo...</span>) || <span>Upload photo</span>}</div>
+                            <div className="modalaudio-logo">
+                                <img src="src/assets/images/modal/upload-photo.svg" alt="Upload audio" />
+                                <div className="modalaudio-subtitle">{(this.state.loading && <span>Loading audio...</span>) || <span>Upload audio</span>}</div>
                             </div>
                         </div>
-                        <div onClick={this.forweb} className="addphoto col-xs-6">
-                            <div className="modalphoto-logo">
-                                <img src="src/assets/images/modal/upload-photos-for-web.svg" alt="Upload Photo for Web" />
-                                <div className="modalphoto-subtitle">Add photo for web</div>
+                        <div className="addaudio col-xs-6">
+                            <div className="modalaudio-logo">
+                                <img src="src/assets/images/modal/upload-photos-for-web.svg" alt="Upload audio for Web" />
+                                <div className="modalaudio-subtitle">Add audio for web</div>
                             </div>
                         </div>
-                    </div>
-                }
-                {this.state.forweb &&
-                    <div className="div-forweb">
-                        <input onKeyDown={this.keyPress} className="form-control" type="text" placeholder="URL"/>
                     </div>
                 }
                 <input value={media.tagsStr} onChange={tagsChange} className="tags form-control" type="text" placeholder="#tags" />
@@ -115,4 +94,4 @@ class ModalPhoto extends React.Component {
     };
 }
 
-export default connect()(ModalPhoto);
+export default connect()(ModalAudio);

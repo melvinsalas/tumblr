@@ -8,6 +8,9 @@ import PostText from '../posttext/PostText'
 import PostPhoto from '../postphoto/PostPhoto'
 import PostQuote from '../postquote/PostQuote'
 import PostVideo from '../postvideo/PostVideo'
+import PostLink from '../postlink/PostLink'
+import PostChat from '../postchat/PostChat'
+import PostAudio from '../postaudio/PostAudio'
 import { API_SERVER } from '../../constants.js';
 
 
@@ -66,6 +69,9 @@ class Posts extends React.Component {
             { post.media.type == "photo" && <PostPhoto post={post} />}
             { post.media.type == "quote" && <PostQuote post={post} />}
             { post.media.type == "video" && <PostVideo post={post} />}
+            { post.media.type == "link" && <PostLink post={post} />}
+            { post.media.type == "chat" && <PostChat post={post} />}
+            { post.media.type == "audio" && <PostAudio post={post} />}
             <div className="row">
               <div className="col-xs-12">
                 <div className="tags">

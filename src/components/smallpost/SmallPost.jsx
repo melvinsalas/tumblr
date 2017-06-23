@@ -13,9 +13,11 @@ class SmallPost extends React.Component {
     }
 
     render() {
+        let { post } = this.props; 
         return (
+            !!post && 
             <div className="smallpost">
-                <img src="https://68.media.tumblr.com/9f5418dd8fa146aade4f6148a0d3287d/tumblr_orpkw4XkIT1s60oo7o1_400.gif" alt="Post Image" />
+                <img src={post.media.url} alt="Post Image" />
                 <div className="footer">
                     <span className="count">234,450 notes</span>
                     <div className="actions">

@@ -51,15 +51,15 @@ class NewPost extends React.Component {
                         <img className="img-newpost img-responsive" src="src/assets/images/new-post/quote.svg" alt="" />
                         <p className="label-imagepost">Quote</p>
                     </div>
-                    <div className="post-option" onClick={() => this.openModal('text')} >
+                    <div className="post-option" onClick={() => this.openModal('link')} >
                         <img className="img-newpost img-responsive" src="src/assets/images/new-post/link.svg" alt="" />
                         <p className="label-imagepost">Link</p>
                     </div>
-                    <div className="post-option" onClick={() => this.openModal('text')} >
+                    <div className="post-option" onClick={() => this.openModal('chat')} >
                         <img className="img-newpost img-responsive" src="src/assets/images/new-post/chat.svg" alt="" />
                         <p className="label-imagepost">Chat</p>
                     </div>
-                    <div className="post-option" onClick={() => this.openModal('text')} >
+                    <div className="post-option" onClick={() => this.openModal('audio')} >
                         <img className="img-newpost img-responsive" src="src/assets/images/new-post/audio.svg" alt="" />
                         <p className="label-imagepost">Audio</p>
                     </div>

@@ -9,6 +9,7 @@ import Posts from '../posts/Posts';
 import Radar from '../radar/Radar';
 import Recommended from '../recommended/Recommended';
 import Modal from '../../components/modal/Modal';
+import LoadingPosts from '../loadingposts/LoadingPosts';
 import { API_SERVER } from '../../constants.js';
 
 require('./main.scss');
@@ -19,7 +20,8 @@ class Main extends React.Component {
     this.state = {
       greeting: '',
       isOpen: false,
-      posts: []
+      posts: [],
+      loadingData: true
     }
   }
 
@@ -38,11 +40,15 @@ class Main extends React.Component {
     instance.get('/posts')
       .then(function (response) {
         self.setState({
-          posts: response.data
+          posts: response.data,
+          loadingData: false
         });
       })
       .catch(function (error) {
         console.log(error);
+        self.setState({
+          loadingData: false
+        });
       });
   }
 
@@ -62,15 +68,24 @@ class Main extends React.Component {
         <div className="row">
           <div className="col-md-offset-1 col-md-7 no-padding">
             <NewPost addPost={addPost} />
-            {!!this.state.posts && this.state.posts.map(post => {
-              return (
-                  <Posts key={post.id} post={post} />
-              );
-            })}
+            {!!this.state.posts && 
+              this.state.posts.map(post => {
+                return (
+                    <Posts key={post.id} post={post} />
+                );})
+            }
+            {!this.state.posts.length && 
+              <LoadingPosts loadingData={this.state.loadingData} />
+            }
+
           </div>
           <div className="col-md-offset-1 col-md-3 no-padding">
-            <Recommended />
-            <Radar />
+            <div className="col-xs-6 col-md-12">
+              <Recommended />
+            </div>
+            <div className="col-xs-6 col-md-12">
+              <Radar />
+            </div>
           </div>
         </div>
       </div>

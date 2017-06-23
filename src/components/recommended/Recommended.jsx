@@ -13,7 +13,8 @@ class Recommended extends React.Component {
   constructor() {
     super();
     this.state = {
-      recomendations: []
+      recomendations: [],
+      recomendationsEmpty: false
     }
   }
 
@@ -28,7 +29,8 @@ class Recommended extends React.Component {
     instance.get('/recommended')
       .then(function (response) {
         self.setState({
-          recomendations: response.data
+          recomendations: response.data,
+          recomendationsEmpty: response.data.length == 0
         });
       })
       .catch(function (error) {
@@ -53,15 +55,15 @@ class Recommended extends React.Component {
               );
             }
           })}
-          {/*<Blog />
-          <hr />
-          <Blog />
-          <hr />
-          <Blog />*/}
+          { this.state.recomendationsEmpty &&
+            <div className="recomendationsEmpty">🚫 No recomendations data 👤</div>
+          }
         </div>
-        <div className="panel-footer">
-          <a href="">EXPLORE TUMBLR</a>
-        </div>
+        { !this.state.recomendationsEmpty &&
+          <div className="panel-footer">
+            <a href="">EXPLORE TUMBLR</a>
+          </div>
+        }
       </div>
     );
   };

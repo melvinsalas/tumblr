@@ -8,6 +8,9 @@ import ModalText from '../modaltext/ModalText'
 import ModalPhoto from '../modalphoto/ModalPhoto'
 import ModalQuote from '../modalquote/ModalQuote'
 import ModalVideo from '../modalvideo/ModalVideo'
+import ModalLink from '../modallink/ModalLink'
+import ModalChat from '../modalchat/ModalChat'
+import ModalAudio from '../modalaudio/ModalAudio'
 import { API_SERVER } from '../../constants.js';
 
 require('./modal.scss');
@@ -57,6 +60,10 @@ class Modal extends React.Component {
         this.state.media.content = e.target.value;
     }
 
+    urlChange(url) {
+        this.state.media.url = url;
+    }
+
     tagsChange(e) {
         this.state.media.tags = e.target.value
             .split('#')
@@ -65,20 +72,16 @@ class Modal extends React.Component {
         this.setState({tagsStr: e.target.value});
     }
 
-    urlChange(url) {
-        this.state.media.url = url;
-    }
-
     render() {
-        let handlerOpen = this.props.handlerOpen;
-        let modalType = this.props.modalType;
         let addPost = this.props.addPost;
-        this.state.media.type = modalType;
-        let media = this.state;
-        let titleChange = this.titleChange.bind(this);
         let contentChange = this.contentChange.bind(this);
-        let urlChange = this.urlChange.bind(this);
+        let handlerOpen = this.props.handlerOpen;
+        let media = this.state;
+        let modalType = this.props.modalType;
         let tagsChange = this.tagsChange.bind(this);
+        let titleChange = this.titleChange.bind(this);
+        let urlChange = this.urlChange.bind(this);
+        this.state.media.type = modalType;
         return (
             (this.props.isOpen &&
                 <div className="modal2 row">
@@ -89,10 +92,13 @@ class Modal extends React.Component {
                             <img className="settings" src="src/assets/images/modal/settings.svg" alt="Settings" />
                         </div>
                         <div className="panel-body">
-                            {modalType == 'text' && <ModalText media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
+                            {modalType == 'text'  && <ModalText media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
                             {modalType == 'photo' && <ModalPhoto media={media} urlChange={urlChange} tagsChange={tagsChange}/>}
                             {modalType == 'quote' && <ModalQuote media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
                             {modalType == 'video' && <ModalVideo media={media} urlChange={urlChange} tagsChange={tagsChange}/>}
+                            {modalType == 'link'  && <ModalLink media={media} urlChange={urlChange} tagsChange={tagsChange}/>}
+                            {modalType == 'chat'  && <ModalChat media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
+                            {modalType == 'audio' && <ModalAudio media={media} urlChange={urlChange} tagsChange={tagsChange}/>}
                         </div>
                         <div className="panel-footer">
                             <span className="btn-close" onClick={() => handlerOpen()}>CLOSE</span>

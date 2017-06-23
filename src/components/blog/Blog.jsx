@@ -19,7 +19,7 @@ class Blog extends React.Component {
             <div className="blog">
                 <img className="blog-photo" src={blog.photo} alt="Avatar" />
                 <div className="blog-info">
-                    <div className="title">{blog.userName}</div>
+                    <div className="title">{blog.name}</div>
                     <div className="subtitle">{blog.blogname}</div>
                 </div>
                 <img className="blog-btn" src="src/assets/images/blog/follow.svg" alt="Follow"/>
