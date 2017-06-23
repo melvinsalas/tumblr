@@ -14,16 +14,7 @@ class Home extends React.Component {
                 <Main />
                 <MainFooter />
 
-                {
-                    fetch('https://www.crhoy.com/nacionales/escasas-mejoras-mantienen-a-costa-rica-con-redes-moviles-lentas/')
-                        .then(function(data) {
-                            console.log(data);
-                        })
-                        .catch(function(error) {
-                            console.log(error);
-                        })   
-
-                }
+                
             </div>
         );
     };
