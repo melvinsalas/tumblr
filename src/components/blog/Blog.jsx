@@ -5,6 +5,7 @@ import * as testActions from '../../actions/testActions';
 import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import { API_SERVER } from '../../constants.js';
+import followImage from '../../assets/images/blog/follow.svg'
 
 require('./blog.scss');
 
@@ -45,7 +46,7 @@ class Blog extends React.Component {
                     <div className="subtitle">{blog.blogname}</div>
                 </div>
                 {!blog.isFollowed && 
-                    <img onClick={this.follow} className="blog-btn" src="src/assets/images/blog/follow.svg" alt="Follow"/>
+                    <img onClick={this.follow} className="blog-btn" src={followImage} alt="Follow"/>
                 }
             </div>
         );

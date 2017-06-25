@@ -12,6 +12,8 @@ import ModalLink from '../modallink/ModalLink'
 import ModalChat from '../modalchat/ModalChat'
 import ModalAudio from '../modalaudio/ModalAudio'
 import { API_SERVER } from '../../constants.js';
+import settingsImage from '../../assets/images/modal/settings.svg';
+import twitterImage from '../../assets/images/modal/twitter.svg';
 
 require('./modal.scss');
 
@@ -89,7 +91,7 @@ class Modal extends React.Component {
                     <div className="panel col-md-offset-3 col-md-6">
                         <div className="panel-heading">
                             <span className="account">Account</span>
-                            <img className="settings" src="src/assets/images/modal/settings.svg" alt="Settings" />
+                            <img className="settings" src={settingsImage} alt="Settings" />
                         </div>
                         <div className="panel-body">
                             {modalType == 'text'  && <ModalText media={media} titleChange={titleChange} contentChange={contentChange} tagsChange={tagsChange}/>}
@@ -103,7 +105,7 @@ class Modal extends React.Component {
                         <div className="panel-footer">
                             <span className="btn-close" onClick={() => handlerOpen()}>CLOSE</span>
                             <button onClick={this.submit} className="btn btn-post">POST</button>
-                            <img className="twitter" src="src/assets/images/modal/twitter.svg" alt="Twitter" />
+                            <img className="twitter" src={twitterImage} alt="Twitter" />
                         </div>
                     </div>
                 </div>)

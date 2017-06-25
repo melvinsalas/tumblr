@@ -31,18 +31,6 @@ class LoadingPost extends React.Component {
                     </div>
                 </div>
             </div>
-
-            
-            // {!this.state.posts.length && this.state.loadingData &&
-            //   <LoadingPosts loadingData={this.state.loadingData} />
-            //   <div>
-            //     <img src="src/assets/images/searching.svg" alt="Searching"/>
-            //   </div>
-            // }
-            // {!this.state.posts.length && !this.state.loadingData &&
-            //   <div>nothing</div>
-            // }
-
         );
     };
 }

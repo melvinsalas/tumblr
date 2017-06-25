@@ -5,6 +5,8 @@ import * as testActions from '../../actions/testActions';
 import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import { API_SERVER } from '../../constants.js';
+import UploadPhotoImage from '../../assets/images/modal/upload-photo.svg';
+import UploadPhotoWebImage from '../../assets/images/modal/upload-photos-for-web.svg'
 
 require('./modalphoto.scss');
 
@@ -92,13 +94,13 @@ class ModalPhoto extends React.Component {
                         <div className="addphoto left col-xs-6">
                             <input onChange={this.loadfile} className="input-file" type="file" />
                             <div className="modalphoto-logo">
-                                <img src="src/assets/images/modal/upload-photo.svg" alt="Upload Photo" />
+                                <img src={UploadPhotoImage} alt="Upload Photo" />
                                 <div className="modalphoto-subtitle">{(this.state.loading && <span>Loading photo...</span>) || <span>Upload photo</span>}</div>
                             </div>
                         </div>
                         <div onClick={this.forweb} className="addphoto col-xs-6">
                             <div className="modalphoto-logo">
-                                <img src="src/assets/images/modal/upload-photos-for-web.svg" alt="Upload Photo for Web" />
+                                <img src={UploadPhotoWebImage} alt="Upload Photo for Web" />
                                 <div className="modalphoto-subtitle">Add photo for web</div>
                             </div>
                         </div>

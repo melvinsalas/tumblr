@@ -18,7 +18,7 @@ let rules = [
     ]
   },
   {
-    test: /\.(eot|otf|svg|ttf|woff|woff2)$/,
+    test: /\.(eot|otf|ttf|woff|woff2)$/,
     use: [
       {
         loader: 'file-loader',

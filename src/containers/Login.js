@@ -5,6 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { API_SERVER } from '../constants.js';
+import TumblrLogo from '../assets/images/tumblr.svg';
 
 require('./login.scss');
 
@@ -217,7 +218,7 @@ class Login extends React.Component {
                 <div className="login-gradient"></div>
                 <div className="login row">
                     <div className="login-form col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 text-center">
-                        <img src="src/assets/images/tumblr.svg" alt="tumblr" className="logo" />
+                        <img src={TumblrLogo} alt="tumblr" className="logo" />
                         <div>
                             {this.state.signup && 
                                 <div>
@@ -262,7 +263,7 @@ class Login extends React.Component {
                                         value={this.state.user.password}
                                         onChange={passHandleChange}
                                         className={`form-control input-lg ${this.state.passwordError && "inputError"} login-round-down`}
-                                        placeholder="Passport" />
+                                        placeholder="Password" />
                                     <button onClick={this.log} className="btn btn-login btn-lg btn-block"><strong>Login</strong></button>
                                 </div>
                             }
@@ -272,7 +273,7 @@ class Login extends React.Component {
                                         value={this.state.user.password}
                                         onChange={passHandleChange}
                                         className={`form-control input-lg ${this.state.passwordError && "inputError"} login-round-down`}
-                                        placeholder="Passport" />
+                                        placeholder="Password" />
                                     <button onClick={this.makeSignup} className="btn btn-login btn-lg btn-block"><strong>Create user</strong></button>
                                 </div>
                             }

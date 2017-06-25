@@ -12,6 +12,12 @@ import PostLink from '../postlink/PostLink'
 import PostChat from '../postchat/PostChat'
 import PostAudio from '../postaudio/PostAudio'
 import { API_SERVER } from '../../constants.js';
+import CloseImage from '../../assets/images/post/close.svg';
+import ExploreImage from '../../assets/images/post/explore.svg';
+import LikeImage from '../../assets/images/post/like.svg';
+import ReblogImage from '../../assets/images/post/reblog.svg';
+import ReplyImage from '../../assets/images/post/reply.svg';
+import ShareImage from '../../assets/images/post/share.svg';
 
 
 require('./post.scss');
@@ -60,8 +66,8 @@ class Posts extends React.Component {
               </div>
             </div>
             <div className="col-sm-3">
-              <img className="btn-heading" src="src/assets/images/post/explore.svg" alt="Explore" />
-              <img className="btn-heading btn-small" src="src/assets/images/post/close.svg" alt="Close" />
+              <img className="btn-heading" src={ExploreImage} alt="Explore" />
+              <img className="btn-heading btn-small" src={CloseImage} alt="Close" />
             </div>
           </div>
           <div className="panel-body">
@@ -91,10 +97,10 @@ class Posts extends React.Component {
               </span>
             </div>
             <div className="col-sm-8">
-              <img className="btn-footer" src="src/assets/images/post/like.svg" alt="Like" />
-              <img className="btn-footer" src="src/assets/images/post/reblog.svg" alt="Reblog" />
-              <img className="btn-footer" src="src/assets/images/post/reply.svg" alt="Reply" />
-              <img className="btn-footer" src="src/assets/images/post/share.svg" alt="Share" />
+              <img className="btn-footer" src={LikeImage} alt="Like" />
+              <img className="btn-footer" src={ReblogImage} alt="Reblog" />
+              <img className="btn-footer" src={ReplyImage} alt="Reply" />
+              <img className="btn-footer" src={ShareImage} alt="Share" />
             </div>
           </div>
         </div>

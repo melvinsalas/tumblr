@@ -5,6 +5,8 @@ import * as testActions from '../../actions/testActions';
 import '../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 import '../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import { API_SERVER } from '../../constants.js';
+import UploadPhotoImage from '../../assets/images/modal/upload-photo.svg'
+import UploadPhotoWebImage from '../../assets/images/modal/upload-photos-for-web.svg'
 
 require('./modalvideo.scss');
 
@@ -76,13 +78,13 @@ class ModalVideo extends React.Component {
                         <div className="addvideo left col-xs-6">
                             <input onChange={this.loadfile} className="input-file" type="file" />
                             <div className="modalvideo-logo">
-                                <img src="src/assets/images/modal/upload-photo.svg" alt="Upload Video" />
+                                <img src={UploadPhotoImage} alt="Upload Video" />
                                 <div className="modalvideo-subtitle">{(this.state.loading && <span>Loading video...</span>) || <span>Upload video</span>}</div>
                             </div>
                         </div>
                         <div className="addvideo col-xs-6">
                             <div className="modalvideo-logo">
-                                <img src="src/assets/images/modal/upload-photos-for-web.svg" alt="Upload Video for Web" />
+                                <img src={UploadPhotoWebImage} alt="Upload Video for Web" />
                                 <div className="modalvideo-subtitle">Add video for web</div>
                             </div>
                         </div>

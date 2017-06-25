@@ -34,7 +34,6 @@ class Radar extends React.Component {
           radar: response.data,
           radarEmpty: !response.data
         });
-        console.log('radarEmpty?', self.state.radarEmpty);
       })
       .catch(function (error) {
         console.log(error);
