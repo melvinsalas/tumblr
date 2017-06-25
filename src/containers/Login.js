@@ -68,7 +68,7 @@ class Login extends React.Component {
                     localStorage.setItem('token', token);
                     localStorage.setItem('name', response.data.name);
                     localStorage.setItem('photo', response.data.photo);
-                    history.push('/home');
+                    history.push('/');
                 })
                 .catch(function (error) {
                     console.log(error);

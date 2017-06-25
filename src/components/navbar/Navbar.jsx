@@ -43,7 +43,7 @@ class Navbar extends React.Component {
         const customHistory = createBrowserHistory({
             forceRefresh: true
         });
-        customHistory.push('/');
+        customHistory.push('/login');
     }
 
     render() {
