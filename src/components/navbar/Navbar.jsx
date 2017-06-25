@@ -48,7 +48,6 @@ class Navbar extends React.Component {
 
     render() {
         let { greeting } = this.props;
-        !localStorage.getItem('token') && this.logOut()
         return (
             <nav className="navbar navbar-inverse">
                 <div className="container">

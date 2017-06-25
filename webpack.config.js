@@ -27,6 +27,15 @@ let rules = [
     ]
   },
   {
+    test: /\.ico?$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: { name: '[name].[ext]' }
+      }
+    ]
+  },
+  {
     test: /\.(eot|otf|ttf|woff|woff2)$/,
     use: [
       {

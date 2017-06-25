@@ -16,6 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     var redirects = require("./_redirects");
+    var favicon = require("./favicon.ico");
   }
 
   render() {

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { API_SERVER } from '../constants.js';
 import TumblrLogo from '../assets/images/tumblr.svg';
+import createBrowserHistory from 'history/createBrowserHistory'
 
 require('./login.scss');
 
@@ -202,8 +203,16 @@ class Login extends React.Component {
         }
     }
 
+    logIn = () => {
+        const customHistory = createBrowserHistory({
+            forceRefresh: true
+        });
+        customHistory.push('/home');
+    }
+
     // render method
     render() {
+
         // bind change handlers
         let userHandleChange = this.userHandleChange.bind(this);
         let passHandleChange = this.passHandleChange.bind(this);
@@ -213,6 +222,7 @@ class Login extends React.Component {
 
         // return the render
         return (
+            !!localStorage.getItem('token')? this.logIn():
             <div className="login-back">
                 <div className="login-transparency"></div>
                 <div className="login-gradient"></div>
