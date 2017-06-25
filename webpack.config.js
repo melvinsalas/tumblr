@@ -18,6 +18,15 @@ let rules = [
     ]
   },
   {
+    test: /\_redirects$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: { name: '_redirects' }
+      }
+    ]
+  },
+  {
     test: /\.(eot|otf|ttf|woff|woff2)$/,
     use: [
       {

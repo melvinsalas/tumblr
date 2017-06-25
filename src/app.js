@@ -15,6 +15,7 @@ const store = configureStore();
 class App extends React.Component {
   constructor(props) {
     super(props);
+    var redirects = require("./_redirects");
   }
 
   render() {
