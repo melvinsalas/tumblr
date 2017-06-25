@@ -43,12 +43,12 @@ class Navbar extends React.Component {
         const customHistory = createBrowserHistory({
             forceRefresh: true
         });
-        customHistory.push('/login');
+        customHistory.push('/');
     }
 
     render() {
         let { greeting } = this.props;
-        // !localStorage.getItem('token') && this.logOut()
+        !localStorage.getItem('token') && this.logOut()
         return (
             <nav className="navbar navbar-inverse">
                 <div className="container">
